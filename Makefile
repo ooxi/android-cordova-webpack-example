@@ -16,6 +16,9 @@ build-android:
 	rm -rf 'cordova-app/platforms'
 	rm -rf 'cordova-app/plugins'
 
+	rm -rf 'cordova-app/www'
+	cp -r 'webpack-boilerplate/dist' 'cordova-app/www'
+
 	docker run -it --rm --volume ${PWD}:${PWD} --workdir "${PWD}/cordova-app" beevelop/cordova cordova --no-telemetry platform add android
 	docker run -it --rm --volume ${PWD}:${PWD} --workdir "${PWD}/cordova-app" beevelop/cordova cordova --no-telemetry build
 

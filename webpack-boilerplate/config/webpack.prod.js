@@ -10,8 +10,8 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: paths.build,
-    publicPath: '/',
-    filename: 'js/[name].[contenthash].bundle.js',
+    publicPath: '',	// Must not be /, otherwise paths do not work inside Apache Cordova
+    filename: '[name].[contenthash].bundle.js',
   },
   module: {
     rules: [
@@ -36,7 +36,7 @@ module.exports = merge(common, {
   plugins: [
     // Extracts CSS into separate files
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
+      filename: '[name].[contenthash].css',	// Might have trouble with relative includes of assets, if not in base directory, since public path is no longer /
       chunkFilename: '[id].css',
     }),
   ],
