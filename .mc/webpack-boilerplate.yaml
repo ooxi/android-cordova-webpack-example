@@ -1,0 +1,11 @@
+---
+base: ubuntu:22.04
+install:
+ - make
+ - nodejs
+ - npm
+---
+#!/bin/bash
+
+sudo npm install -g http-server@^14.1
+
