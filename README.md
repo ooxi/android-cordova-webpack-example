@@ -10,7 +10,7 @@ The example itself uses [webpack-boilerplate][webpack-boilerplate] and
 ## Quickstart
 
 ```
-mc webpack-boilerplate make -C webpack-boilerplate
+make
 ```
 
 
